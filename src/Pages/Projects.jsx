@@ -3,6 +3,9 @@ import { useHistory, useParams } from 'react-router'
 import Slider from 'react-slick'
 import backward from '../Assests/Graphics/Backward.svg'
 import { ProjectContext } from '../Context/projectContext'
+import Loading from './Loading'
+import SampleNextArrow from '../Components/SampleNextArrow'
+import SamplePrevArrow from '../Components/SamplePrevArrow'
 
 function Projects() {
   const { loading, project } = React.useContext(ProjectContext)
@@ -18,9 +21,33 @@ function Projects() {
     speed: 800,
     cssEase: 'linear',
     fade: false,
+    responsive: [
+      {
+        breakpoint: 1500,
+        settings: {
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+          infinite: true,
+        },
+      },
+    ],
   }
   if (loading) {
-    return <h1>loading...</h1>
+    return <Loading />
   } else {
     const {
       ProjectTitle,

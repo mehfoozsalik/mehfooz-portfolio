@@ -6,16 +6,9 @@ const ProjectContext = React.createContext()
 
 function ProjectProvider({ children }) {
   const [project, setProject] = useState([])
+  const [newdata, setNewdata] = React.useState([])
   const [loading, setLoading] = useState(true)
 
-  React.useEffect(() => {
-    setLoading(true)
-    axios.get(`${url}/Projects`).then((response) => {
-      setProject(response.data)
-      setLoading(false)
-    })
-    return () => {}
-  }, [])
   const brandIdentity = project.filter((items) => {
     return items.gallery.galleryTitle === 'Brand Identity'
   })
@@ -29,7 +22,19 @@ function ProjectProvider({ children }) {
       items.gallery.galleryTitle === 'Website Ui'
     )
   })
-  const [newdata, setNewdata] = React.useState(digitalGraphic)
+  React.useEffect(() => {
+    setLoading(true)
+    axios.get(`${url}/Projects`).then((response) => {
+      setProject(response.data)
+      setLoading(false)
+    })
+    return () => {}
+  }, [])
+
+  React.useEffect(() => {
+    setNewdata(digitalGraphic)
+    return () => {}
+  }, [project])
   const filterItems = (category) => {
     if (category === 'brandIdentity') {
       setNewdata(brandIdentity)
