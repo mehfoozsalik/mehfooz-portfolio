@@ -1,5 +1,6 @@
 import React from 'react'
 import Loading from './Loading'
+
 // import imagetest from '../Assests/extra/Rectangle9.jpg'
 // import forward from '../Assests/Graphics/Forward.svg'
 // import backward from '../Assests/Graphics/Backward.svg'
@@ -8,7 +9,7 @@ import { ProjectContext } from '../Context/projectContext'
 
 function Portfolio(props) {
   const { loading, newdata, filterItems } = React.useContext(ProjectContext)
-
+  console.log(newdata)
   if (loading) {
     return <Loading />
   } else {

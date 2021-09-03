@@ -1,5 +1,7 @@
 import React from 'react'
 import CertificateCarosel from '../Components/CertificateCarosel'
+import pdf from '../Assests/Certificates/Resume.pdf'
+import AboutDescription from '../Components/aboutDescription'
 
 function Aboutme(props) {
   const [show, setShow] = React.useState(false)
@@ -13,23 +15,9 @@ function Aboutme(props) {
       </div>
       <div className='aboutme'>
         <h1>About Me</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu arcu
-          eget leo rhoncus dapibus. Nulla bibendum suscipit tellus egestas
-          dapibus. Vivamus elementum erat sed risus tempor ultrices. Phasellus
-          quis accumsan nisi, scelerisque elementum quam. Quisque vel arcu a
-          ligula faucibus viverra eu ac ex. Vestibulum nisl nunc, molestie eget
-          feugiat in, aliquam vel orci. Vivamus cursus eleifend suscipit. Sed
-          quis eros ac arcu ultrices facilisis ultrices id diam. Nunc sed
-          tincidunt velit.Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. In eu arcu eget leo rhoncus dapibus. Nulla bibendum suscipit
-          tellus egestas dapibus. Vivamus elementum erat sed risus tempor
-          ultrices. Phasellus quis accumsan nisi, scelerisque elementum quam.
-          Quisque vel arcu a ligula faucibus viverra eu ac ex. Vestibulum nisl
-          nunc, molestie eget feugiat in, aliquam vel orci. Vivamus cursus
-          eleifend suscipit. Sed quis eros ac arcu ultrices facilisis ultrices
-          id diam. Nunc sed tincidunt velit.
-        </p>
+        <div className='aboutPara'>
+          <AboutDescription />
+        </div>
         <h3 onClick={clickHandler}>view my certificates</h3>
 
         <div className='siteLink'>
@@ -40,6 +28,9 @@ function Aboutme(props) {
             <h3>ArtPartfolio</h3>
           </a>
         </div>
+        <a className='cv' href={pdf} download>
+          Download CV
+        </a>
       </div>
     </>
   )
