@@ -16,27 +16,33 @@ function Portfolio(props) {
     return (
       <div className='portfolio'>
         <div className='categoryList'>
-          <h4
-            onClick={() => {
-              filterItems('brandIdentity')
-            }}
-          >
-            Brand Identity
-          </h4>
-          <h4
-            onClick={() => {
-              filterItems('digitalGraphic')
-            }}
-          >
-            Digital Art
-          </h4>
-          <h4
-            onClick={() => {
-              filterItems('uiUx')
-            }}
-          >
-            Ui Ux
-          </h4>
+          <div>
+            <h4
+              onClick={() => {
+                filterItems('brandIdentity')
+              }}
+            >
+              Brand Identity
+            </h4>
+          </div>
+          <div>
+            <h4
+              onClick={() => {
+                filterItems('digitalGraphic')
+              }}
+            >
+              Digital Art
+            </h4>
+          </div>
+          <div>
+            <h4
+              onClick={() => {
+                filterItems('uiUx')
+              }}
+            >
+              Ui Ux
+            </h4>
+          </div>
         </div>
         <div className='ProjectsGrid'>
           <div className='current'>

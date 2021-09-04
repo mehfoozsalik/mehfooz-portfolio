@@ -1,4 +1,5 @@
 import React from 'react'
+import Typical from 'react-typical'
 import { Link } from 'react-router-dom'
 import PortfolioImage from '../Assests/Graphics/POrtFolioMainImage.png'
 import ai from '../Assests/Icons/Ai.svg'
@@ -15,12 +16,33 @@ function Home(props) {
   return (
     <div className='homepage'>
       <div className='typography'>
-        <h3>Software Engineer</h3>
-        <h4>
-          <span>Ui Ux</span>
-          <span>Designer</span>
-          <span>Developer</span>
-        </h4>
+        <h3>
+          A Software Engineer Who Loves
+          <div className='typo'>
+            <p>
+              <Typical
+                steps={[
+                  'DESIGNING',
+                  1500,
+                  'PROGRAMMING',
+                  1500,
+                  'SKETCHING',
+                  1500,
+                  'CODING',
+                  600,
+                  'CREATIVE ARTS',
+                  500,
+                  'PAINTING',
+                  1500,
+                  'BUSINESS',
+                  1500,
+                ]}
+                loop={Infinity}
+                wrapper='p'
+              />
+            </p>
+          </div>
+        </h3>
         <h1 className='mainheading'>Mehfooz Salik</h1>
         <div className='aboutmeHomePara'>
           <AboutDescription />
@@ -31,9 +53,10 @@ function Home(props) {
           <img src={PortfolioImage} alt='main Image' />
         </Link>
       </div>
-
       <div className='skillsSet'>
-        <h2 className='skills'>Skills</h2>
+        <div className='skills'>
+          <h3>Skills</h3>
+        </div>
 
         <div className='icons'>
           <img src={ai} alt='skils set icons' />

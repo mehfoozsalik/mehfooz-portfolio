@@ -17,6 +17,7 @@ function Projects() {
     className: 'largecarsel',
     infinite: true,
     slidesToShow: 1,
+    dots: true,
     autoplay: true,
     speed: 800,
     cssEase: 'linear',

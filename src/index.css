@@ -15,7 +15,7 @@
   --secondHeading: 2.5rem;
   --thirdHeading: 2rem;
   --forthHeading: 1.8rem;
-  --paragraphc: 1.6rem;
+  --paragraphc: 1.4rem;
   --caption: 1.4rem;
   /* ----------Shadows---------- */
   --darkShadow: 3px 6px 16px #0b0b1aaf;
@@ -58,9 +58,9 @@ h4 span {
 }
 p {
   font-size: var(--paragraphc);
-  line-height: 2rem;
-  word-spacing: 0.5rem;
-  letter-spacing: 0.09rem;
+  line-height: 1.8rem;
+  word-spacing: 0.3rem;
+  letter-spacing: 0.08rem;
 }
 
 /* ----- SlideBar Container ----- */
@@ -89,8 +89,8 @@ p {
   flex: 1;
   border: 0px;
   background: transparent;
-  width: 4rem;
-  height: 3.6rem;
+  width: 3rem;
+  height: 2.6rem;
   cursor: pointer;
   z-index: 1000;
   display: flex;
@@ -100,21 +100,21 @@ p {
 }
 
 .HamDiv {
-  width: 4rem;
-  height: 0.6rem;
+  width: 3rem;
+  height: 0.3rem;
   border-radius: 6px;
   background: var(--lightColor);
   transition: var(--mainTransition);
 }
 .HamOne {
-  transform: translateY(170%) rotate(45deg);
+  transform: translateY(240%) rotate(45deg);
 }
 .HamTwo {
   transform: translateX(-1000%);
   opacity: 0;
 }
 .HamThree {
-  transform: translateY(-170%) rotate(-45deg);
+  transform: translateY(-240%) rotate(-45deg);
 }
 .slideBar {
   display: flex;
@@ -154,23 +154,22 @@ p {
 /* ----- Header ----- */
 .header {
   position: relative;
-  height: 6vh;
 }
 .headerNav {
   display: none;
 }
 .logo {
   text-align: center;
-  margin-top: 2.6rem;
+  margin-top: 2.4rem;
 }
 @media all and (min-width: 970px) {
   .slideContainer {
     display: none;
   }
   .header {
-    margin-top: 1rem;
     display: flex;
     align-items: center;
+    height: 10vh;
   }
   .hamBurgerIcon {
     display: none;
@@ -218,68 +217,86 @@ p {
 /* ----- Homepage ----- */
 .homepage {
   height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
   overflow: hidden;
 }
 .typography {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 12px;
+}
+.typography h3 {
+  font-size: 1.4em;
+}
+.typo {
+  text-align: center;
+}
+.typo p {
+  line-height: 2.5rem;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.mainBGImage {
+  margin: -6rem;
 }
 .homepage img {
-  margin: -4rem;
-  width: 45rem;
+  width: 43rem;
   transition: var(--mainTransition);
 }
 .homepage img:hover {
   transform: scale3d(1.02, 1.02, 1.02);
 }
 
-.skillsSet {
-  align-self: flex-start;
-  text-align: center;
-}
-.skills {
-  margin-left: 6rem;
-}
-.icons {
-  width: 70%;
-  margin-left: 15rem;
-}
 .icons img {
-  padding-left: 0.4rem;
-  height: 4.2rem;
-  width: 4.2rem;
+  width: 3.2rem;
+  margin: 0.3rem;
 }
 .aboutmeHomePara {
   display: none;
 }
 @media all and (min-width: 970px) {
   .homepage {
-    flex-direction: row;
-    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .homepage > div:nth-child(2) {
+    grid-row: 1 / span 2;
+    grid-column: 2 / span 3;
   }
 
   .mainBGImage {
     display: grid;
     place-items: center;
-    width: 50vw;
+  }
+  .mainBGImage img {
+    width: 55rem;
+    transition: var(--mainTransition);
+  }
+  .mainBGImage img:hover {
+    transform: scale3d(1.02, 1.02, 1.02);
   }
   .aboutmeHomePara {
     display: contents;
   }
   .typography {
-    width: 50vw;
-    margin-left: 4rem;
+    margin-left: 6rem;
+    flex-direction: column;
     align-items: flex-start;
-    margin-top: -10rem;
+  }
+  .typography p {
+    margin-top: 1rem;
+  }
+  .typo {
+    text-align: start;
   }
   .skillsSet {
-    position: absolute;
-    left: 4rem;
-    bottom: 8rem;
+    margin-left: 6rem;
+    justify-self: start;
   }
 }
 
@@ -292,15 +309,20 @@ p {
   align-content: center;
 }
 .categoryList {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  height: 6rem;
+  margin-top: 3rem;
 }
 .categoryList h4 {
   font-size: 1.4rem;
   color: var(--lightColor);
   cursor: pointer;
+}
+.categoryList h4:focus-visible {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 .ProjectsGrid {
   background: rgba(212, 255, 249, 0.4);
@@ -395,6 +417,12 @@ a {
     column-gap: 2rem;
     row-gap: 1rem;
   }
+  .categoryList > div:nth-child(1) {
+    justify-self: end;
+  }
+  .categoryList > div:last-child {
+    justify-self: start;
+  }
   .imageGrid img {
     height: 11rem;
   }
@@ -434,6 +462,7 @@ a {
     width: 80vw;
     row-gap: 1rem;
   }
+
   .imageGrid img {
     height: 15rem;
   }
