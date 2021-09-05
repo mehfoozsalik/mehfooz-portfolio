@@ -64,7 +64,21 @@ p {
 }
 
 /* ----- SlideBar Container ----- */
-
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  transition: var(--mainTransition);
+  opacity: 1;
+  top: 0;
+  left: 0;
+  z-index: 98;
+  background: rgba(0, 0, 0, 0.514);
+}
+.backdropOff {
+  display: none;
+  opacity: 0;
+}
 .slideContainer {
   width: 80vw;
   height: 100vh;
@@ -76,7 +90,7 @@ p {
   left: 0;
 }
 .slideOff {
-  transform: translateX(-1000%);
+  transform: translateX(-200%);
   z-index: -99;
 }
 .hamBurgerIcon {
@@ -241,10 +255,41 @@ p {
   font-weight: bold;
 }
 .mainBGImage {
-  margin: -6rem;
+  margin: -5rem;
+  position: relative;
+  font-size: 4rem;
+}
+.skills {
+  margin-top: -1rem;
+}
+.triangle {
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-bottom: 2em solid black;
+  position: absolute;
+  top: -1.9em;
+}
+.tooltext {
+  visibility: hidden;
+  width: 6em;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.4em;
+  padding: 0.4em 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -100%);
+  z-index: 1;
+}
+.mainBGImage:hover .tooltext {
+  visibility: visible;
 }
 .homepage img {
-  width: 43rem;
+  width: 41rem;
   transition: var(--mainTransition);
 }
 .homepage img:hover {

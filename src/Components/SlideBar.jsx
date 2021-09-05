@@ -64,6 +64,10 @@ function SlideBar(props) {
           </div>
         </div>
       </div>
+      <div
+        className={`${toggle ? 'backdrop' : 'backdrop backdropOff'}`}
+        onClick={clickHandler}
+      ></div>
     </>
   )
 }

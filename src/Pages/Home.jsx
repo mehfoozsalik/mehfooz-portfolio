@@ -51,6 +51,10 @@ function Home(props) {
       <div className='mainBGImage'>
         <Link to='/aboutme'>
           <img src={PortfolioImage} alt='main Image' />
+          <span className='tooltext'>
+            <span className='triangle'></span>
+            Click me!
+          </span>
         </Link>
       </div>
       <div className='skillsSet'>

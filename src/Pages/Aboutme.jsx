@@ -19,7 +19,6 @@ function Aboutme(props) {
           <AboutDescription />
         </div>
         <h3 onClick={clickHandler}>view my certificates</h3>
-
         <div className='siteLink'>
           <a href='https://splashstore-profile.netlify.app/' target='_blank'>
             <h3>SpashStore</h3>
@@ -28,6 +27,7 @@ function Aboutme(props) {
             <h3>ArtPartfolio</h3>
           </a>
         </div>
+
         <a className='cv' href={pdf} download>
           Download CV
         </a>
