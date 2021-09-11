@@ -4,6 +4,7 @@ import one from '../Assests/Certificates/certOne.jpg'
 import two from '../Assests/Certificates/certTwo.jpg'
 import three from '../Assests/Certificates/certThree.png'
 import backward from '../Assests/Graphics/Backward.svg'
+import CrossBtn from './CrossBtn'
 
 function certificateCarosel({ setShow }) {
   const settings = {
@@ -17,7 +18,7 @@ function certificateCarosel({ setShow }) {
     <>
       <div className='backbtn'>
         <button className='btn' onClick={setShow}>
-          <img src={backward} alt='' />
+          <CrossBtn />
         </button>
       </div>
       <div className='aboutCertificates'>

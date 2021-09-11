@@ -1,11 +1,7 @@
 import React from 'react'
 
-function Loading(props) {
-  return (
-    <div className='center'>
-      <h1>Loading...</h1>
-    </div>
-  )
+function Loading() {
+  return <div className='box'></div>
 }
 
 export default Loading

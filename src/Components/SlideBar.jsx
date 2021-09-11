@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useHistory } from 'react-router-dom'
 import logo from '../Assests/Graphics/M_S.svg'
 import Drib from '../Assests/SocialIcons/Dribbble.svg'
 import Inst from '../Assests/SocialIcons/Instagram.svg'
@@ -7,7 +7,12 @@ import Twit from '../Assests/SocialIcons/Twitter.svg'
 
 function SlideBar(props) {
   const [toggle, setToggle] = React.useState(false)
+  const history = useHistory()
   function clickHandler() {
+    setToggle(!toggle)
+  }
+  function pushObject() {
+    history.push(`/portfolio/Ui%20Ux`)
     setToggle(!toggle)
   }
   return (
@@ -40,7 +45,7 @@ function SlideBar(props) {
                   HOME
                 </NavLink>
               </li>
-              <li onClick={clickHandler}>
+              <li onClick={pushObject}>
                 <NavLink
                   to='/portfolio'
                   className='navItems'

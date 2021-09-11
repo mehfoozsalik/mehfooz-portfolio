@@ -1,11 +1,12 @@
 import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useHistory } from 'react-router-dom'
 import logo from '../Assests/Graphics/M_S.svg'
 import Drib from '../Assests/SocialIcons/Dribbble.svg'
 import Inst from '../Assests/SocialIcons/Instagram.svg'
 import Twit from '../Assests/SocialIcons/Twitter.svg'
 
 function Header(props) {
+  const history = useHistory()
   return (
     <header className='header'>
       <div className='logo'>
@@ -26,7 +27,11 @@ function Header(props) {
                 HOME
               </NavLink>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                history.push(`/portfolio/Ui%20Ux`)
+              }}
+            >
               <NavLink
                 to='/portfolio'
                 className='navItems'

@@ -6,9 +6,17 @@ const ProjectContext = React.createContext()
 
 function ProjectProvider({ children }) {
   const [project, setProject] = useState([])
-  const [newdata, setNewdata] = React.useState([])
+
   const [loading, setLoading] = useState(true)
 
+  React.useEffect(() => {
+    setLoading(true)
+    axios.get(`${url}/Projects`).then((response) => {
+      setProject(response.data)
+      setLoading(false)
+    })
+    return () => {}
+  }, [])
   const brandIdentity = project.filter((items) => {
     return items.gallery.galleryTitle === 'Brand Identity'
   })
@@ -22,36 +30,13 @@ function ProjectProvider({ children }) {
       items.gallery.galleryTitle === 'Website Ui'
     )
   })
-  React.useEffect(() => {
-    setLoading(true)
-    axios.get(`${url}/Projects`).then((response) => {
-      setProject(response.data)
-      setLoading(false)
-    })
-    return () => {}
-  }, [])
-
-  React.useEffect(() => {
-    setNewdata(digitalGraphic)
-    return () => {}
-  }, [project])
-  const filterItems = (category) => {
-    if (category === 'brandIdentity') {
-      setNewdata(brandIdentity)
-    } else if (category === 'digitalGraphic') {
-      setNewdata(digitalGraphic)
-    } else if (category === 'uiUx') {
-      setNewdata(uiUx)
-    }
-  }
-
   return (
     <ProjectContext.Provider
       value={{
         loading,
-        project,
-        newdata,
-        filterItems,
+        brandIdentity,
+        digitalGraphic,
+        uiUx,
       }}
     >
       {children}

@@ -9,6 +9,7 @@ import Aboutme from './Pages/Aboutme'
 ///importing components
 import Header from './Components/Header'
 import SlideBar from './Components/SlideBar'
+import ProjectItems from './Components/ProjectItems'
 
 function App() {
   return (
@@ -16,16 +17,13 @@ function App() {
       <SlideBar />
       <Header />
       <Switch>
-        <Route exact={true} path='/'>
+        <Route exact path='/'>
           <Home />
         </Route>
-        <Route exact={true} path='/portfolio'>
+        <Route path='/portfolio'>
           <Portfolio />
         </Route>
-        <Route exact={true} path='/portfolio/:id'>
-          <Projects />
-        </Route>
-        <Route exact={true} path='/aboutme'>
+        <Route exact path='/aboutme'>
           <Aboutme />
         </Route>
         <Route path='/*'>

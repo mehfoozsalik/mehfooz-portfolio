@@ -1,17 +1,19 @@
 import React from 'react'
 import { useHistory, useParams } from 'react-router'
 import Slider from 'react-slick'
-import backward from '../Assests/Graphics/Backward.svg'
+
 import { ProjectContext } from '../Context/projectContext'
 import Loading from './Loading'
 import SampleNextArrow from '../Components/SampleNextArrow'
 import SamplePrevArrow from '../Components/SamplePrevArrow'
+import CrossBtn from '../Components/CrossBtn'
 
-function Projects() {
+function Projects({ exactdata }) {
   const { loading, project } = React.useContext(ProjectContext)
   const { id } = useParams()
   const history = useHistory()
-  const projectData = project.find((item) => item.id === parseInt(id))
+  console.log(exactdata)
+  const projectData = exactdata.find((item) => item.id === parseInt(id))
 
   const settings = {
     className: 'largecarsel',
@@ -60,7 +62,7 @@ function Projects() {
       <div className='singleProject'>
         <div className='backbtn'>
           <button className='btn' onClick={history.goBack}>
-            <img src={backward} alt='' />
+            <CrossBtn />
           </button>
         </div>
         <img src={ProjectTitleImage.url} alt='' className='mainImage' />
