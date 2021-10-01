@@ -57,10 +57,10 @@ function SlideBar(props) {
             </ul>
           </div>
           <div className='socialLinks'>
-            <a href='https://dribbble.com/mehfoozsalik' target='_blank'>
+            <a href='https://www.instagram.com/mehfooz.salik' target='_blank'>
               <img src={Inst} alt='Instagram' />
             </a>
-            <a href='https://www.instagram.com/mehfooz.salik' target='_blank'>
+            <a href='https://dribbble.com/mehfoozsalik' target='_blank'>
               <img src={Drib} alt='Dribbles' />
             </a>
             <a href='https://twitter.com/MehfoozSalik' target='_blank'>
