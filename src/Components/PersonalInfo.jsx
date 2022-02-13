@@ -39,7 +39,7 @@ function PersonalInfo({ perosnalInfo, resume, smallloading, experience }) {
           className='personalInfo-button'
         >
           <button className='personalInfo-button-fancy'>
-            <a href={resume} download>
+            <a href={resume}>
               {smallloading ? (
                 <SmallLoading />
               ) : (

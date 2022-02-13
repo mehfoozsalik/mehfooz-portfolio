@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
-import url from "../Utilities/URL"
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import url from '../Utilities/URL'
 
 const AboutContext = React.createContext()
 
@@ -29,7 +29,7 @@ function AboutProvider({ children }) {
   useEffect(() => {
     setSmallLoading(true)
     axios.get(`${url}/api/resume?populate=*`).then((response) => {
-      setResume(response.data.data.attributes.resumeCV.data.attributes.url)
+      setResume(response.data.data.attributes.resume)
       setSmallLoading(false)
     })
     return () => {}
@@ -45,7 +45,8 @@ function AboutProvider({ children }) {
         experience,
         skilsContent,
         expedu,
-      }}>
+      }}
+    >
       {children}
     </AboutContext.Provider>
   )
