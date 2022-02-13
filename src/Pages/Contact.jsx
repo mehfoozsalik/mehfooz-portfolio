@@ -7,13 +7,22 @@ import Loading from '../Components/Loading'
 import URL from '../Utilities/URL'
 
 function Contact(props) {
+  const [submited, setSubmited] = React.useState(false)
   const { loading, contact } = React.useContext(ContactContext)
-  console.log(contact)
+  const handleSubmit = () => {
+    setSubmited(true)
+    setTimeout(() => {
+      setSubmited(false)
+    }, 5000)
+  }
   if (loading) {
     return <Loading />
   } else {
     return (
       <div className='container'>
+        <div className={submited ? 'alertMessage' : 'alertMessage hideMessage'}>
+          <p>Holaa! I have recieved your message. I will contact you soon</p>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: '-100vh' }}
@@ -63,46 +72,69 @@ function Contact(props) {
                 transition={{ duration: 0.6, ease: 'easeIn' }}
                 className='contact-form'
               >
-                <form action='' className='form'>
+                <iframe
+                  style={{ display: 'none' }}
+                  name='hidden_iframe'
+                  id='hidden_iframe'
+                ></iframe>
+                <form
+                  action='https://docs.google.com/forms/u/0/d/e/1FAIpQLSd7XxAyOIhng_BO7eR1KK9SKmjBrRIDqedIn3d8K4dFx5fo_w/formResponse'
+                  method='post'
+                  target='hidden_iframe'
+                  onSubmit={handleSubmit}
+                  className='form'
+                >
                   <div className='single-element'>
                     <label htmlFor='name'>Full Name</label>
                     <input
                       id='name'
+                      name='entry.1596993531'
                       placeholder='YOUR FULL NAME...'
                       type='text'
+                      required='true'
                     />
                   </div>
                   <div className='single-element'>
                     <label htmlFor='num'>Phone Number</label>
                     <input
                       id='num'
+                      name='entry.1786713568'
                       placeholder='YOUR WHATSAPP NUMBER...'
-                      type='text'
+                      type='tel'
+                      required='true'
                     />
                   </div>
                   <div className='single-element'>
                     <label htmlFor='email'>Email Address</label>
                     <input
                       id='email'
+                      name='entry.1935005680'
                       placeholder='YOUR EMAIL ADDRESS...'
                       type='mail'
+                      required='true'
                     />
                   </div>
                   <div className='single-element'>
                     <label htmlFor='sub'>Subject</label>
-                    <input id='sub' placeholder='SUBJECT HERE...' type='text' />
+                    <input
+                      id='sub'
+                      name='entry.1775807052'
+                      placeholder='SUBJECT HERE...'
+                      type='text'
+                    />
                   </div>
                   <div className='single-element'>
                     <label htmlFor='msg'>message</label>
                     <textarea
-                      name='msg'
+                      name='entry.1047515085'
                       id='msg'
                       rows='5'
                       placeholder='YOUR MESSAGE HERE...'
+                      required='true'
                     ></textarea>
                   </div>
                   <div className='single-element'>
-                    <button>
+                    <button type='submit'>
                       <svg
                         width='26'
                         height='18'

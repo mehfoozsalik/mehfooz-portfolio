@@ -144,6 +144,28 @@ button {
   font-size: var(--sixthHeading);
   font-weight: 500;
 }
+.alertMessage {
+  position: fixed;
+  display: block;
+  top: 2rem;
+  z-index: 99999;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: var(--secondaryColor);
+  transition: all 0.4s ease-in;
+  opacity: 1;
+}
+.alertMessage p {
+  font-size: 2rem;
+  padding: 1rem;
+  color: var(--lightColor);
+}
+.hideMessage {
+  top: -30rem;
+  opacity: 0;
+}
 .container {
   width: 96vw;
   margin: 0 auto;
@@ -721,6 +743,7 @@ button {
   display: flex;
   align-items: center;
 }
+
 .underline-ee {
   width: 4rem;
   height: 0.1rem;
