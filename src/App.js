@@ -1,35 +1,38 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-//Importing pages
-import Home from './Pages/Home'
-import Portfolio from './Pages/Portfolio'
-import Projects from './Pages/Projects'
-import Error from './Pages/Error'
-import Aboutme from './Pages/Aboutme'
+import React, { Suspense } from "react"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 ///importing components
-import Header from './Components/Header'
-import SlideBar from './Components/SlideBar'
-import ProjectItems from './Components/ProjectItems'
+import Logo from "./Components/Logo"
+import ScrollTop from "./Utilities/ScrollTop"
+import NavItems from "./Components/navigation/NavItems"
+import ScrollToTopBtn from "./Components/ScrollToTopBtn"
+import Loading from "./Components/Loading"
+///import Pages
+const About = React.lazy(() => import("./Pages/About"))
+const Home = React.lazy(() => import("./Pages/Home"))
+const Blogs = React.lazy(() => import("./Pages/Blogs"))
+const BlogDetail = React.lazy(() => import("./Pages/BlogDetail"))
+const Contact = React.lazy(() => import("./Pages/Contact"))
+const Portfolio = React.lazy(() => import("./Pages/Portfolio"))
+const PortfolioDetail = React.lazy(() => import("./Pages/PortfolioDetail"))
 
 function App() {
   return (
     <Router>
-      <SlideBar />
-      <Header />
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/portfolio'>
-          <Portfolio />
-        </Route>
-        <Route exact path='/aboutme'>
-          <Aboutme />
-        </Route>
-        <Route path='/*'>
-          <Error />
-        </Route>
-      </Switch>
+      <Suspense fallback={<Loading />}>
+        <ScrollTop />
+        <ScrollToTopBtn />
+        <NavItems />
+        <Logo />
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='about' element={<About />} />
+          <Route exact path='portfolio' element={<Portfolio />} />
+          <Route path='portfolio/:id' element={<PortfolioDetail />} />
+          <Route exact path='contact' element={<Contact />} />
+          <Route exact path='blogs' element={<Blogs />} />
+          <Route exact path='blogs/:id' element={<BlogDetail />} />
+        </Routes>
+      </Suspense>
     </Router>
   )
 }

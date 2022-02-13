@@ -1,1 +1,1 @@
-export default 'https://artpartfolio.herokuapp.com'
+export default 'https://mehfoozport.herokuapp.com'
