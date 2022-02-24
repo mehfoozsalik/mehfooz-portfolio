@@ -1,5 +1,10 @@
 import React, { Suspense } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom'
 ///importing components
 import Logo from './Components/Logo'
 import ScrollTop from './Utilities/ScrollTop'
@@ -24,7 +29,8 @@ function App() {
         <NavItems />
         <Logo />
         <Routes>
-          <Route index path='/home' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Navigate replace to='/home' />} />
           <Route exact path='about' element={<About />} />
           <Route exact path='portfolio' element={<Portfolio />} />
           <Route path='portfolio/:id' element={<PortfolioDetail />} />
