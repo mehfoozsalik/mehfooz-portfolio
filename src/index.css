@@ -157,6 +157,7 @@ button {
   transition: all 0.4s ease-in;
   opacity: 1;
 }
+
 .alertMessage p {
   font-size: 2rem;
   padding: 1rem;
@@ -221,17 +222,15 @@ button {
   width: 100%;
 }
 .Nav-link-container {
-  transition: all 0.2s ease-in;
+  transition: all 0.4s ease-in;
+  width: auto;
   margin: 1rem;
-  width: 4.4rem;
-  height: 4.4rem;
+  padding: 0.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--secondaryColor);
-  border-radius: 3.6rem;
-  position: relative;
-  overflow: hidden;
+  border-radius: 50%;
 }
 .nav-link-unorder {
   background: var(--primaryColor);
@@ -245,15 +244,16 @@ button {
   width: 2.4rem;
   height: 2.4rem;
 }
-.Nav-link-container li {
-  position: absolute;
-
+.nav-link-in {
+  position: relative;
+}
+.nav-link-name {
+  transition: all 0.3s ease-in;
+  font-size: 0;
   opacity: 0;
-  list-style: none;
 }
 .nav-link-icon {
-  width: auto;
-  height: auto;
+  display: flex;
 }
 .Nav-link-container:hover {
   background: #fff;
@@ -467,6 +467,33 @@ button {
   height: 100%;
   padding: 1.5rem;
 }
+.socialContent {
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
+}
+.reference-account {
+  width: auto;
+}
+.reference-account svg {
+  width: auto;
+  height: 4rem;
+}
+.behance {
+  padding: 1rem;
+  background: #0057ff;
+}
+.drible {
+  margin-left: 1rem;
+  padding: 1rem;
+  background: #f0f5ff;
+}
+.insta {
+  margin-left: 1rem;
+  padding: 1rem;
+  background: #0057ff;
+}
+
 .subTitle {
   display: block;
   margin: 10rem 0;
@@ -829,18 +856,23 @@ button {
     grid-template-columns: 1fr 1fr;
   }
   .nav-link-unorder {
+    background: transparent;
+    grid-template-columns: 1fr;
+    justify-items: end;
     width: auto;
   }
+  .Nav-link-container {
+    border-radius: 3rem;
+  }
   .Nav-link-container:hover {
-    width: 17rem;
+    width: fit-content;
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
     justify-content: end;
-    padding-right: 0.4rem;
   }
-  .Nav-link-container:hover li {
+  .Nav-link-container:hover .nav-link-name {
     font-size: 2rem;
+    margin-left: 1rem;
     color: var(--primaryColor);
-    left: 10%;
     opacity: 1;
   }
   .navigation-items-container {
@@ -848,11 +880,6 @@ button {
     transform: translateY(-50%);
     right: 0;
     width: auto;
-  }
-  .nav-link-unorder {
-    background-color: transparent;
-    grid-template-columns: 1fr;
-    justify-items: end;
   }
   .container {
     width: 86vw;
