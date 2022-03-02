@@ -342,6 +342,7 @@ button {
   height: auto;
   position: relative;
   overflow: hidden;
+  transition: filter 0.2s ease-in 0.4s;
 }
 .home-link-pro::after {
   content: "";
@@ -352,12 +353,13 @@ button {
   top: 0;
   left: 100%;
   z-index: -1;
-  transition: all 0.4s ease-in;
+  transition: all 0.2s ease-in;
 }
 .home-link-pro:hover::after {
   left: 0;
 }
 .home-link-pro:hover {
+  filter: drop-shadow(2px 4px 12px white);
   color: var(--primaryColor);
 }
 .home-link-pro:hover svg {
@@ -478,10 +480,14 @@ button {
   margin: 2rem;
 }
 .reference-account svg {
+  filter: drop-shadow(1px 1px 3px rgb(223, 253, 255));
+  transition: 0.3s;
   width: 5rem;
   height: 5rem;
 }
-
+.reference-account svg:hover {
+  filter: drop-shadow(4px 2px 16px rgb(223, 253, 255));
+}
 .subTitle {
   display: block;
   margin: 10rem 0;
@@ -660,9 +666,12 @@ button {
   grid-template-rows: repeat(3, 10rem);
   gap: 2rem;
 }
+.address-section-image {
+}
 .address-section-image img {
-  width: 3.4rem;
-  height: 3.4rem;
+  filter: drop-shadow(0.2rem 0.1rem 1rem rgb(203, 249, 255));
+  width: 4rem;
+  height: 4rem;
 }
 .address-section-detail h6 {
   font-weight: 400;
