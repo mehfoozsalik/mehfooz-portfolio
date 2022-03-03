@@ -229,8 +229,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--secondaryColor);
-  border-radius: 50%;
+  background: linear-gradient(158.61deg, #d2fffa 1.19%, #64b8f5 101.69%);
+  border-radius: 25%;
 }
 .nav-link-unorder {
   background: var(--primaryColor);
@@ -241,8 +241,8 @@ button {
   grid-template-columns: repeat(5, 1fr);
 }
 .Nav-link-container svg {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 3rem;
+  height: 3rem;
 }
 .nav-link-in {
   position: relative;
@@ -254,12 +254,13 @@ button {
 }
 .nav-link-icon {
   display: flex;
+  padding-top: 0.4rem;
 }
 .Nav-link-container:hover {
   background: #fff;
 }
 .Nav-link-container:hover svg path {
-  fill: var(--primaryColor);
+  fill: var(--secondaryColor);
 }
 .Nav-link-container:hover svg rect {
   fill: var(--primaryColor);
@@ -268,7 +269,7 @@ button {
   background: #fff;
 }
 .Nav-link-container-active svg path {
-  fill: var(--primaryColor);
+  fill: var(--secondaryColor);
 }
 .Nav-link-container-active svg rect {
   fill: var(--primaryColor);
@@ -859,7 +860,7 @@ button {
     width: auto;
   }
   .Nav-link-container {
-    border-radius: 3rem;
+    border-radius: 25%;
   }
   .Nav-link-container:hover {
     width: fit-content;
