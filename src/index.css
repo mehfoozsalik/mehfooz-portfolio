@@ -260,7 +260,7 @@ button {
   background: #fff;
 }
 .Nav-link-container:hover svg path {
-  fill: var(--secondaryColor);
+  fill: var(--primaryColor);
 }
 .Nav-link-container:hover svg rect {
   fill: var(--primaryColor);
@@ -269,7 +269,7 @@ button {
   background: #fff;
 }
 .Nav-link-container-active svg path {
-  fill: var(--secondaryColor);
+  fill: var(--primaryColor);
 }
 .Nav-link-container-active svg rect {
   fill: var(--primaryColor);
@@ -844,8 +844,12 @@ button {
 }
 @media only screen and (min-width: 768px) {
   .bgcontainer {
+    width: 100%;
+    height: 100%;
     display: block;
-    position: absolute;
+    clip-path: polygon(0 0, 10% 0, 30% 100%, 0% 100%);
+    background-color: var(--secondaryColor);
+    position: fixed;
     top: 0;
     left: -5rem;
     z-index: -99;
@@ -859,17 +863,16 @@ button {
     justify-items: end;
     width: auto;
   }
-  .Nav-link-container {
-    border-radius: 25%;
-  }
   .Nav-link-container:hover {
+    border-radius: 2rem;
+    padding-left: 1rem;
     width: fit-content;
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
     justify-content: end;
   }
   .Nav-link-container:hover .nav-link-name {
     font-size: 2rem;
-    margin-left: 1rem;
+    margin: 0 1rem;
     color: var(--primaryColor);
     opacity: 1;
   }
@@ -885,7 +888,6 @@ button {
   }
   .Home-container {
     grid-template-columns: 40% 1fr;
-    grid-template-rows: calc(100vh - 10rem);
     gap: 0;
     margin: 0;
   }
@@ -895,7 +897,7 @@ button {
   }
   .image-section-main-imag {
     width: 100%;
-    height: 90%;
+    height: 100%;
     border-radius: 0;
     object-fit: cover;
     object-position: top;

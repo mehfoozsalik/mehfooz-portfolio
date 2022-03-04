@@ -18,15 +18,7 @@ function Home() {
           animate={{ opacity: 1, y: "-100vh" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='fade-out-effect'></motion.div>
-        <svg
-          className='bgcontainer'
-          width='50%'
-          height='100%'
-          viewBox='0 0 498 100%'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
-          <path d='M0 0H150L498 828H0V0Z' fill='#df5d3a' />
-        </svg>
+        <div className='bgcontainer'></div>
         <motion.div
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
