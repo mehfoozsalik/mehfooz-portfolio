@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
   --primaryColor: #1f1f1f;
   --secondaryColor: #df5d3a;
@@ -44,7 +44,7 @@
 }
 body {
   width: 100%;
-  font-family: "Noto Sans Display", sans-serif;
+  font-family: 'Noto Sans Display', sans-serif;
   color: var(--lightColor);
   background: var(--primaryColor);
   list-style: none;
@@ -120,7 +120,7 @@ input {
 textarea {
   font-size: var(--onepointtwo);
   border-radius: 0;
-  font-family: "Noto Sans Display", sans-serif;
+  font-family: 'Noto Sans Display', sans-serif;
   width: 100%;
   height: 100%;
   letter-spacing: 0.1rem;
@@ -346,7 +346,7 @@ button {
   transition: filter 0.2s ease-in 0.4s;
 }
 .home-link-pro::after {
-  content: "";
+  content: '';
   position: absolute;
   background-color: var(--pureWhite);
   width: 100%;
@@ -446,7 +446,7 @@ button {
   position: relative;
 }
 .personalInfo-button-fancy::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -601,11 +601,11 @@ button {
   height: 28rem;
   width: 100%;
   object-fit: cover;
-  object-position: 0 0;
+  object-position: center;
   transition: all 0.4s ease-in;
 }
 .single-item-container:hover img {
-  object-position: 0 -30rem;
+  object-position: 50% -10rem;
 }
 .animated-background {
   animation-duration: 3s;
@@ -651,8 +651,8 @@ button {
   justify-content: center;
   align-items: center;
   background: var(--secondaryColor);
-  opacity: 0;
-  transition: all 0.2s ease-in 0.15s;
+  opacity: 1;
+  transition: all 0.2s ease-in;
   border-radius: 0.4rem;
 }
 .single-item-container:hover h5 {
@@ -738,25 +738,30 @@ button {
 .single-item-container-blog {
   width: 100%;
   cursor: pointer;
+  overflow: hidden;
 }
 .single-item-container-blog-image {
   width: 100%;
-  height: 26rem;
+  height: 22rem;
   object-fit: cover;
-  object-position: 0 0;
+  object-position: center;
   transition: all 0.4s ease-in;
 }
 .single-item-container-blog img:hover {
-  object-position: 0 -30rem;
+  transform: scale3d(1.05, 1.05, 1.05);
 }
 
 .underline-div {
+  z-index: 11;
+  position: relative;
   width: 100%;
   height: 0.6rem;
   margin-top: -0.2rem;
   background: var(--secondaryColor);
 }
 .blog-title-div {
+  z-index: 11;
+  position: relative;
   background-color: var(--pureWhite);
   color: var(--primaryColor);
   padding: 1rem;

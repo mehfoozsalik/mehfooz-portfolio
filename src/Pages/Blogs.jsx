@@ -61,7 +61,7 @@ function Blogs(props) {
             >
               {blog.data.map((items) => {
                 const { attributes } = items
-                const { url } = attributes.image.data.attributes
+                const { url } = attributes.mainImage.data.attributes
                 return (
                   <div data-aos='fade-up'>
                     <Link to={`${items.id}`} key={items.id}>

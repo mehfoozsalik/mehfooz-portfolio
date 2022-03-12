@@ -1,13 +1,14 @@
 import React from 'react'
 
 function SinglePort({ attributes }) {
-  const { mainTitle, Image } = attributes
+  const { mainTitle, OuterImage } = attributes
+
   return (
     <div className='single-item-container'>
-      {Image.data ? (
+      {OuterImage.data ? (
         <img
           className='single-item-container-image'
-          src={Image.data.attributes.url}
+          src={OuterImage.data.attributes.url}
           alt=''
         />
       ) : (
